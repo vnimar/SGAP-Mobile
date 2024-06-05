@@ -45,16 +45,22 @@ public class MainActivity extends AppCompatActivity {
         btcriabd.setOnClickListener(view -> {
             try {
                 bd = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
-                bd.execSQL("create table if not exists " +
-                        " funcionarios(numreg integer primary key" +
-                        " autoincrement, nome text not null, telefone text " +
-                        " not null, " + " email text not null, " + " cargo text not null) ");
+                bd.execSQL("create table if not exists funcionarios(numreg integer primary key" +
+                        " autoincrement, nome text not null, telefone text not null, " +
+                        " email text not null, cargo text not null)");
+                bd.execSQL("create table if not exists pacientes(id integer primary key" +
+                        " autoincrement, nome text not null, telefone text not null, email text not null)");
+                bd.execSQL("create table if not exists consultas(id integer primary key" +
+                        " autoincrement, paciente_id integer not null, data text not null, " +
+                        " observacoes text, foreign key(paciente_id) references pacientes(id))");
+
                 AlertDialog.Builder dialogo = new AlertDialog.Builder(MainActivity.this);
                 dialogo.setTitle("Aviso")
                         .setMessage("Banco de dados criado com sucesso!")
                         .setNeutralButton("OK", null)
                         .show();
             } catch (Exception e) {
+                e.printStackTrace();
             }
         });
 
