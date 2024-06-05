@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:background="#3ba0e2">
+
+        <ImageView
+
+            android:id="@+id/imgSis"
+
+            android:layout_width="96dp"
+
+            android:layout_height="96dp"
+
+            android:contentDescription="@string/todo"
+
+            android:src="@drawable/logoclin"
+            tools:ignore="ImageContrastCheck"
+            tools:srcCompat="@drawable/logoclin" />
+
+        <TextView
+
+            android:id="@+id/textView1"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            />
+
+
+        <LinearLayout
+
+            android:id="@+id/layoutCorFundo"
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="match_parent"
+
+            android:background="#3ba0e2"
+
+            android:gravity="center">
+
+
+            <TextView
+
+                android:id="@+id/textView2"
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:text="@string/sistema_gerenciador_de_clinicas_sgap"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+
+                android:textColor="#37474F" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:id="@+id/layoutImagemFundo"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="fill_parent"
+
+        android:orientation="vertical">
+
+
+        <TextView
+
+            android:id="@+id/textView3"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/escolha_uma_das_op_es_abaixo"
+
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            android:textSize="20sp" />
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="fill_parent"
+
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/btcriabd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/iniciar_banco_de_dados"
+                android:textSize="15sp"
+                tools:ignore="VisualLintButtonSize" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/btCadastrarFuncionario"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cadastrar_funcionario"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/btCadPac"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cadastrar_paciente"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/btGerarAtendimento"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gerar_atendimentos"
+                        android:textSize="15sp"
+                        tools:ignore="TextSizeCheck" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/btFuncionarios"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/funcionarios"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/btPacientes"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pacientes"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/btAtendimentos"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/atendimentos"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

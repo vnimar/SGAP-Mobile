@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">AppSGAP</string>
+    <string name="sistema_gerenciador_de_clinicas_sgap">Sistema Gerenciador de Clinicas - SGAP</string>
+    <string name="escolha_uma_das_op_es_abaixo">Escolha uma das opções abaixo:</string>
+    <string name="iniciar_banco_de_dados">Iniciar Banco de Dados</string>
+    <string name="todo">TODO</string>
+    <string name="cadastrar_funcionario">Cadastrar Funcionario</string>
+    <string name="cadastrar_paciente">Cadastrar Paciente</string>
+    <string name="gerar_atendimentos">Gerar Atendimentos</string>
+    <string name="funcionarios">Funcionarios</string>
+    <string name="pacientes">Pacientes</string>
+    <string name="atendimentos">Atendimentos</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="complete_os_campos_para_registrar_as_informa_es_do_f_ncionario">Complete os campos para registrar as informações do fíncionario</string>
+    <string name="digite_o_nome">Digite o nome</string>
+    <string name="nome">Nome:</string>
+    <string name="nomeFuncionario">[Nome]</string>
+    <string name="telefone">Telefone:</string>
+    <string name="telefoneFuncionario">[Telefone]</string>
+    <string name="digite_seu_telefone">Digite o telefone</string>
+    <string name="e_mail">E-Mail:</string>
+    <string name="e_mailFuncionario">[E-Mail]</string>
+    <string name="digite_seu_email">Digite o email</string>
+    <string name="cargo">Cargo:</string>
+    <string name="cargoFuncionario">[Cargo]</string>
+    <string name="digite_o_cargo">Digite o cargo</string>
+    <string name="voltar">voltar</string>
+    <string name="status">#status</string>
+    <string name="alterar">Alterar</string>
+    <string name="excluir">Excluir</string>
+</resources>

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FuncionariosActivity">
+
+    <LinearLayout
+
+        android:id="@+id/linearLayout1"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:background="#3ba0e2" >
+
+
+        <ImageView
+
+            android:id="@+id/imageView1"
+
+            android:layout_width="72dp"
+
+            android:layout_height="72dp"
+
+            android:contentDescription="@string/todo"
+
+            android:src="@drawable/logoclin"
+            tools:srcCompat="@drawable/logoclin" />
+
+        <TextView
+
+            android:id="@+id/textView1"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            />
+
+        <LinearLayout
+
+            android:id="@+id/layoutCorFundo"
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="match_parent"
+
+            android:background="#54B2D8"
+
+            android:gravity="center" >
+
+            <TextView
+
+                android:id="@+id/textView2"
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:text="@string/funcionarios"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+
+        android:id="@+id/textView3"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="@string/nome"
+
+        android:textAppearance="?android:attr/textAppearanceSmall"
+
+        android:textColor="#000000"
+
+        android:textSize="18sp"
+        tools:text="@string/nome" />
+
+
+    <EditText
+
+        android:id="@+id/txtnome"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:ems="10"
+
+        android:hint="@string/digite_o_nome"
+
+        android:importantForAutofill="no"
+
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        tools:ignore="VisualLintTextFieldSize" />
+
+
+    <TextView
+
+        android:id="@+id/textView4"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="@string/telefone"
+
+        android:textAppearance="?android:attr/textAppearanceSmall"
+
+        android:textColor="#000000"
+
+        android:textSize="18sp"
+        tools:text="@string/telefone" />
+
+
+    <EditText
+
+        android:id="@+id/txttelefone"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:ems="10"
+
+        android:hint="@string/digite_seu_telefone"
+
+        android:importantForAutofill="no"
+
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        tools:ignore="VisualLintTextFieldSize">
+
+
+        <requestFocus />
+
+    </EditText>
+
+
+    <TextView
+
+        android:id="@+id/textView5"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="@string/e_mail"
+
+        android:textAppearance="?android:attr/textAppearanceSmall"
+
+        android:textColor="#000000"
+
+        android:textSize="18sp"
+        tools:text="@string/e_mail" />
+
+
+    <EditText
+
+        android:id="@+id/txtemail"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:ems="10"
+
+        android:hint="@string/digite_seu_email"
+
+        android:importantForAutofill="no"
+
+        android:inputType="text|textEmailAddress"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <TextView
+
+        android:id="@+id/textView6"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="@string/cargo"
+
+        android:textAppearance="?android:attr/textAppearanceSmall"
+
+        android:textColor="#000000"
+
+        android:textSize="18sp"
+        tools:text="@string/cargo" />
+
+
+    <EditText
+
+        android:id="@+id/txtcargo"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:ems="10"
+
+        android:hint="@string/digite_o_cargo"
+
+        android:importantForAutofill="no"
+
+        android:inputType="text|textEmailAddress"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+
+        android:paddingTop="0dp" >
+
+
+        <ImageView
+
+            android:id="@+id/imgprimeiro"
+
+            android:layout_width="50dp"
+
+            android:layout_height="50dp"
+
+            android:contentDescription="@string/todo"
+
+            android:scaleType="fitXY"
+
+            android:src="@drawable/botao_alt_primeiro"
+            tools:ignore="ImageContrastCheck" />
+
+
+        <ImageView
+
+            android:id="@+id/imganterior"
+
+            android:layout_width="50dp"
+
+            android:layout_height="50dp"
+
+            android:contentDescription="@string/todo"
+
+            android:scaleType="fitXY"
+
+            android:src="@drawable/botao_alt_anterior"
+            tools:ignore="ImageContrastCheck" />
+
+
+        <ImageView
+
+            android:id="@+id/imgproximo"
+
+            android:layout_width="50dp"
+
+            android:layout_height="50dp"
+
+            android:contentDescription="@string/todo"
+
+            android:scaleType="fitXY"
+
+            android:src="@drawable/botao_alt_proximo"
+            tools:ignore="ImageContrastCheck" />
+
+
+        <ImageView
+
+            android:id="@+id/imgultimo"
+
+            android:layout_width="50dp"
+
+            android:layout_height="50dp"
+
+            android:contentDescription="@string/todo"
+
+            android:scaleType="fitXY"
+
+            android:src="@drawable/botao_alt_ultimo"
+            tools:ignore="ImageContrastCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+
+        android:paddingTop="0dp" >
+
+
+        <TextView
+
+            android:id="@+id/txtstatus_funcionario"
+
+            android:layout_width="77dp"
+
+            android:layout_height="wrap_content"
+
+            android:contentDescription="@string/status"
+
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            tools:ignore="TextSizeCheck"
+            tools:text="@string/status" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:gravity="center" >
+
+        <Button
+
+            android:id="@+id/btalterarfuncionario"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/alterar"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+
+            android:id="@+id/btexcluirfuncionario"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/excluir"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btvoltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/voltar" />
+
+    </LinearLayout>
+
+</LinearLayout>
