@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FuncionariosActivity">
+    tools:context=".AtendimentoActivity">
 
     <LinearLayout
 
@@ -62,7 +62,7 @@
 
                 android:layout_height="wrap_content"
 
-                android:text="@string/funcionarios"
+                android:text="@string/atendimentos"
 
                 android:textAppearance="?android:attr/textAppearanceLarge"
 
@@ -72,6 +72,7 @@
 
     </LinearLayout>
 
+
     <TextView
 
         android:id="@+id/textView3"
@@ -80,19 +81,19 @@
 
         android:layout_height="wrap_content"
 
-        android:text="@string/nome"
+        android:text="@string/paciente"
 
         android:textAppearance="?android:attr/textAppearanceSmall"
 
         android:textColor="#000000"
 
         android:textSize="18sp"
-        tools:text="@string/nome" />
+        tools:text="@string/paciente" />
 
 
     <EditText
 
-        android:id="@+id/txtnome"
+        android:id="@+id/paciente"
 
         android:layout_width="match_parent"
 
@@ -100,7 +101,7 @@
 
         android:ems="10"
 
-        android:hint="@string/digite_o_nome"
+        android:hint="@string/digite_o_id_do_paciente"
 
         android:importantForAutofill="no"
 
@@ -118,19 +119,19 @@
 
         android:layout_height="wrap_content"
 
-        android:text="@string/telefone"
+        android:text="@string/medico"
 
         android:textAppearance="?android:attr/textAppearanceSmall"
 
         android:textColor="#000000"
 
         android:textSize="18sp"
-        tools:text="@string/telefone" />
+        tools:text="@string/medico" />
 
 
     <EditText
 
-        android:id="@+id/txttelefone"
+        android:id="@+id/medico"
 
         android:layout_width="match_parent"
 
@@ -138,7 +139,7 @@
 
         android:ems="10"
 
-        android:hint="@string/digite_seu_telefone"
+        android:hint="@string/digite_o_id_do_medico"
 
         android:importantForAutofill="no"
 
@@ -146,9 +147,6 @@
         android:minHeight="48dp"
         android:textColorHint="#546E7A"
         tools:ignore="VisualLintTextFieldSize">
-
-
-        <requestFocus />
 
     </EditText>
 
@@ -161,19 +159,19 @@
 
         android:layout_height="wrap_content"
 
-        android:text="@string/e_mail"
+        android:text="@string/data"
 
         android:textAppearance="?android:attr/textAppearanceSmall"
 
         android:textColor="#000000"
 
         android:textSize="18sp"
-        tools:text="@string/e_mail" />
+        tools:text="@string/data" />
 
 
     <EditText
 
-        android:id="@+id/txtemail"
+        android:id="@+id/data"
 
         android:layout_width="match_parent"
 
@@ -181,11 +179,11 @@
 
         android:ems="10"
 
-        android:hint="@string/digite_seu_email"
+        android:hint="@string/digite_a_data_da_consulta"
 
         android:importantForAutofill="no"
 
-        android:inputType="text|textEmailAddress"
+        android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#546E7A"
         tools:ignore="VisualLintTextFieldSize" />
@@ -198,19 +196,19 @@
 
         android:layout_height="wrap_content"
 
-        android:text="@string/cargo"
+        android:text="@string/observa_es"
 
         android:textAppearance="?android:attr/textAppearanceSmall"
 
         android:textColor="#000000"
 
         android:textSize="18sp"
-        tools:text="@string/cargo" />
+        tools:text="@string/observa_es" />
 
 
     <EditText
 
-        android:id="@+id/txtcargo"
+        android:id="@+id/observacoes"
 
         android:layout_width="match_parent"
 
@@ -218,7 +216,7 @@
 
         android:ems="10"
 
-        android:hint="@string/digite_o_cargo"
+        android:hint="@string/digite_a_observa_o_da_consulta"
 
         android:importantForAutofill="no"
 
@@ -316,7 +314,7 @@
 
         <TextView
 
-            android:id="@+id/txtstatus_funcionario"
+            android:id="@+id/txtstatus_atendimento"
 
             android:layout_width="77dp"
 
@@ -340,7 +338,7 @@
 
         <Button
 
-            android:id="@+id/btalterarfuncionario"
+            android:id="@+id/btalteraratendimento"
 
             android:layout_width="wrap_content"
 
@@ -351,7 +349,7 @@
 
         <Button
 
-            android:id="@+id/btexcluirfuncionario"
+            android:id="@+id/btexcluiratendimento"
 
             android:layout_width="wrap_content"
 
@@ -361,7 +359,7 @@
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <Button
-            android:id="@+id/btvoltar"
+            android:id="@+id/btvoltara"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/voltar" />

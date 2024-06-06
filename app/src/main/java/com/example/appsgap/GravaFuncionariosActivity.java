@@ -8,15 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class GravaFuncionariosActivity extends Activity {
-    Button btcadastrarFuncionario;
+    Button btcadastrarFuncionario, btvoltarf;
     EditText ednome, edtelefone, edemail, edcargo;
     SQLiteDatabase db;
 
@@ -26,6 +21,8 @@ public class GravaFuncionariosActivity extends Activity {
         setContentView(R.layout.activity_grava_funcionarios);
 
         btcadastrarFuncionario = findViewById(R.id.btcadastrarFuncionario);
+        btvoltarf = findViewById(R.id.btvoltarcf);
+
         ednome = findViewById(R.id.ednome);
         edtelefone = findViewById(R.id.edtelefone);
         edemail = findViewById(R.id.edemail);
@@ -53,8 +50,11 @@ public class GravaFuncionariosActivity extends Activity {
                 }catch (Exception e){
                     MostraMensagem("Error: " + e);
                 }
-                GravaFuncionariosActivity.this.finish();
             }
+        });
+
+        btvoltarf.setOnClickListener(view -> {
+            GravaFuncionariosActivity.this.finish();
         });
     }
 

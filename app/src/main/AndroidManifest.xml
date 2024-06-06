@@ -13,6 +13,18 @@
         android:theme="@style/Theme.AppSGAP"
         tools:targetApi="31">
         <activity
+            android:name=".AtendimentoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GravaAtendimentosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PacientesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GravaPacientesActivity"
+            android:exported="false" />
+        <activity
             android:name=".FuncionariosActivity"
             android:exported="false" />
         <activity

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".GravaAtendimentosActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +37,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cadastrar_funcionario"
+                android:text="@string/gerar_atendimentos"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#FFFFFF"
                 tools:ignore="TextContrastCheck" />
@@ -52,25 +53,26 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/complete_os_campos_para_registrar_as_informa_es_do_f_ncionario"
+            android:text="@string/complete_os_campos_para_registrar_as_informa_es_do_atendimento"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="@string/nome"
+            android:text="@string/paciente"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/ednome"
+            android:id="@+id/pacienteid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/digite_o_nome"
+            android:hint="@string/digite_o_id_do_paciente"
             android:inputType="text"
             android:minHeight="48dp"
             android:textColorHint="#546E7A"
@@ -84,38 +86,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="@string/telefone"
+            android:text="@string/medico"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edtelefone"
+            android:id="@+id/medicoid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/digite_seu_telefone"
+            android:hint="@string/digite_o_id_do_medico"
             android:inputType="text"
             android:minHeight="48dp"
             android:textColorHint="#546E7A"
             tools:ignore="VisualLintTextFieldSize" />
+
         <TextView
             android:id="@+id/TextView02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="@string/e_mail"
+            android:text="@string/data"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edemail"
+            android:id="@+id/data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/digite_seu_email"
-            android:inputType="text|textEmailAddress"
+            android:hint="@string/digite_a_data_da_consulta"
+            android:inputType="text"
             android:minHeight="48dp"
             android:textColorHint="#546E7A"
             tools:ignore="VisualLintTextFieldSize" />
@@ -125,17 +128,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="@string/cargo"
+            android:text="@string/observa_es"
             android:textColor="#000000"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edcargo"
+            android:id="@+id/observacoes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/digite_o_cargo"
+            android:hint="@string/digite_a_observa_o_da_consulta"
             android:inputType="text"
             android:minHeight="48dp"
             android:textColorHint="#546E7A"
@@ -147,13 +150,13 @@
             android:gravity="center" >
 
             <Button
-                android:id="@+id/btcadastrarFuncionario"
+                android:id="@+id/btcadastrarAtendimento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cadastrar" />
 
             <Button
-                android:id="@+id/btvoltarcf"
+                android:id="@+id/btvoltarca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/voltar" />

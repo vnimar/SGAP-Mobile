@@ -11,7 +11,9 @@
     <string name="pacientes">Pacientes</string>
     <string name="atendimentos">Atendimentos</string>
     <string name="cadastrar">Cadastrar</string>
-    <string name="complete_os_campos_para_registrar_as_informa_es_do_f_ncionario">Complete os campos para registrar as informações do fíncionario</string>
+    <string name="complete_os_campos_para_registrar_as_informa_es_do_f_ncionario">Complete os campos para registrar as informações do funcionário</string>
+    <string name="complete_os_campos_para_registrar_as_informa_es_do_paciente">Complete os campos para registrar as informações do paciente</string>
+    <string name="complete_os_campos_para_registrar_as_informa_es_do_atendimento">Complete os campos para registrar as informações do atendimento</string>
     <string name="digite_o_nome">Digite o nome</string>
     <string name="nome">Nome:</string>
     <string name="nomeFuncionario">[Nome]</string>
@@ -24,8 +26,16 @@
     <string name="cargo">Cargo:</string>
     <string name="cargoFuncionario">[Cargo]</string>
     <string name="digite_o_cargo">Digite o cargo</string>
-    <string name="voltar">voltar</string>
+    <string name="voltar">Voltar</string>
     <string name="status">#status</string>
     <string name="alterar">Alterar</string>
     <string name="excluir">Excluir</string>
+    <string name="paciente">Paciente:</string>
+    <string name="digite_o_id_do_paciente">Digite o id do paciente</string>
+    <string name="medico">Medico:</string>
+    <string name="digite_o_id_do_medico">Digite o id do medico</string>
+    <string name="digite_a_data_da_consulta">Digite a data da consulta</string>
+    <string name="data">Data:</string>
+    <string name="observa_es">Observações :</string>
+    <string name="digite_a_observa_o_da_consulta">Digite a observação da consulta</string>
 </resources>

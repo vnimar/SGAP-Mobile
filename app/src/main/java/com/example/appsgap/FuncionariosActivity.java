@@ -184,6 +184,7 @@ public class FuncionariosActivity extends AppCompatActivity {
         txtnome.setText("");
         txttelefone.setText("");
         txtemail.setText("");
+        txtcargo.setText("");
         if(c.getCount() > 0) {
             c.moveToFirst();
             indice = 1;

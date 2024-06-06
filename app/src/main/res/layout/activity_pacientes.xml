@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FuncionariosActivity">
-
+    tools:context=".PacientesActivity">
     <LinearLayout
 
         android:id="@+id/linearLayout1"
@@ -14,7 +13,7 @@
 
         android:layout_height="wrap_content"
 
-        android:background="#3ba0e2" >
+        android:background="#F9F9FA" >
 
 
         <ImageView
@@ -27,8 +26,8 @@
 
             android:contentDescription="@string/todo"
 
-            android:src="@drawable/logoclin"
-            tools:srcCompat="@drawable/logoclin" />
+            android:src="@drawable/pac"
+            tools:srcCompat="@drawable/pac" />
 
         <TextView
 
@@ -50,7 +49,7 @@
 
             android:layout_height="match_parent"
 
-            android:background="#54B2D8"
+            android:background="#305FD6"
 
             android:gravity="center" >
 
@@ -62,7 +61,7 @@
 
                 android:layout_height="wrap_content"
 
-                android:text="@string/funcionarios"
+                android:text="@string/pacientes"
 
                 android:textAppearance="?android:attr/textAppearanceLarge"
 
@@ -71,6 +70,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
     <TextView
 
@@ -92,7 +92,7 @@
 
     <EditText
 
-        android:id="@+id/txtnome"
+        android:id="@+id/txtnomeP"
 
         android:layout_width="match_parent"
 
@@ -130,7 +130,7 @@
 
     <EditText
 
-        android:id="@+id/txttelefone"
+        android:id="@+id/txttelefoneP"
 
         android:layout_width="match_parent"
 
@@ -173,7 +173,7 @@
 
     <EditText
 
-        android:id="@+id/txtemail"
+        android:id="@+id/txtemailP"
 
         android:layout_width="match_parent"
 
@@ -186,43 +186,6 @@
         android:importantForAutofill="no"
 
         android:inputType="text|textEmailAddress"
-        android:minHeight="48dp"
-        android:textColorHint="#546E7A"
-        tools:ignore="VisualLintTextFieldSize" />
-
-    <TextView
-
-        android:id="@+id/textView6"
-
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        android:text="@string/cargo"
-
-        android:textAppearance="?android:attr/textAppearanceSmall"
-
-        android:textColor="#000000"
-
-        android:textSize="18sp"
-        tools:text="@string/cargo" />
-
-
-    <EditText
-
-        android:id="@+id/txtcargo"
-
-        android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-
-        android:ems="10"
-
-        android:hint="@string/digite_o_cargo"
-
-        android:importantForAutofill="no"
-
-        android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#546E7A"
         tools:ignore="VisualLintTextFieldSize" />
@@ -316,7 +279,7 @@
 
         <TextView
 
-            android:id="@+id/txtstatus_funcionario"
+            android:id="@+id/txtstatus_paciente"
 
             android:layout_width="77dp"
 
@@ -340,7 +303,7 @@
 
         <Button
 
-            android:id="@+id/btalterarfuncionario"
+            android:id="@+id/btalterarp"
 
             android:layout_width="wrap_content"
 
@@ -351,7 +314,7 @@
 
         <Button
 
-            android:id="@+id/btexcluirfuncionario"
+            android:id="@+id/btexcluirp"
 
             android:layout_width="wrap_content"
 
@@ -361,7 +324,7 @@
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <Button
-            android:id="@+id/btvoltar"
+            android:id="@+id/btvoltarp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/voltar" />

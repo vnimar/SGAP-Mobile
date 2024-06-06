@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".GravaPacientesActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +37,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cadastrar_funcionario"
+                android:text="@string/cadastrar_paciente"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#FFFFFF"
                 tools:ignore="TextContrastCheck" />
@@ -52,7 +53,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/complete_os_campos_para_registrar_as_informa_es_do_f_ncionario"
+            android:text="@string/complete_os_campos_para_registrar_as_informa_es_do_paciente"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="18sp" />
         <TextView
@@ -65,7 +66,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/ednome"
+            android:id="@+id/ednomeP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -89,7 +90,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edtelefone"
+            android:id="@+id/edtelefoneP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -109,7 +110,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/edemail"
+            android:id="@+id/edemailP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -120,40 +121,19 @@
             android:textColorHint="#546E7A"
             tools:ignore="VisualLintTextFieldSize" />
 
-        <TextView
-            android:id="@+id/TextView05"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/cargo"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/edcargo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/digite_o_cargo"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textColorHint="#546E7A"
-            tools:ignore="VisualLintTextFieldSize" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:gravity="center" >
 
             <Button
-                android:id="@+id/btcadastrarFuncionario"
+                android:id="@+id/btcadastrarPaciente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cadastrar" />
 
             <Button
-                android:id="@+id/btvoltarcf"
+                android:id="@+id/btvoltarcp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/voltar" />
