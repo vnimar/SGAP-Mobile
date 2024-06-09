@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
 
     android:layout_height="match_parent"
 
@@ -102,89 +102,92 @@
 
             android:textAppearance="?android:attr/textAppearanceLarge"
 
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
 
-        <LinearLayout
-
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-
-            android:layout_height="fill_parent"
-
-            android:gravity="center"
-
-            android:orientation="vertical">
-
+            android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btcriabd"
-                android:layout_width="fill_parent"
+                android:id="@+id/btCadastrarFuncionario"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="@string/iniciar_banco_de_dados"
+                android:text="@string/cadastrar_funcionario"
                 android:textSize="15sp"
-                tools:ignore="VisualLintButtonSize" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.128"
+                tools:ignore="TextSizeCheck" />
 
-                <LinearLayout
-                    android:layout_width="160dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical" >
+            <Button
+                android:id="@+id/btCadPac"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cadastrar_paciente"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.127"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btCadastrarFuncionario"
+                app:layout_constraintVertical_bias="0.098" />
 
-                    <Button
-                        android:id="@+id/btCadastrarFuncionario"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/cadastrar_funcionario"
-                        android:textSize="15sp" />
+            <Button
+                android:id="@+id/btGerarAtendimento"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/gerar_atendimentos"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.127"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btCadPac"
+                app:layout_constraintVertical_bias="0.121" />
 
-                    <Button
-                        android:id="@+id/btCadPac"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/cadastrar_paciente"
-                        android:textSize="15sp" />
+            <Button
+                android:id="@+id/btFuncionarios"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="@string/funcionarios"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.568"
+                app:layout_constraintStart_toEndOf="@+id/btCadastrarFuncionario"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.127" />
 
-                    <Button
-                        android:id="@+id/btGerarAtendimento"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/gerar_atendimentos"
-                        android:textSize="15sp"
-                        tools:ignore="TextSizeCheck" />
+            <Button
+                android:id="@+id/btPacientes"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="@string/pacientes"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.568"
+                app:layout_constraintStart_toEndOf="@+id/btCadPac"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.291" />
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="160dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical" >
+            <Button
+                android:id="@+id/btAtendimentos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/atendimentos"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.609"
+                app:layout_constraintStart_toEndOf="@+id/btGerarAtendimento"
+                app:layout_constraintTop_toBottomOf="@+id/btPacientes"
+                app:layout_constraintVertical_bias="0.121" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <Button
-                        android:id="@+id/btFuncionarios"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/funcionarios"
-                        android:textSize="15sp" />
-
-                    <Button
-                        android:id="@+id/btPacientes"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/pacientes"
-                        android:textSize="15sp" />
-
-                    <Button
-                        android:id="@+id/btAtendimentos"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/atendimentos"
-                        android:textSize="15sp" />
-
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

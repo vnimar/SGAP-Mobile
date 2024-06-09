@@ -19,7 +19,7 @@ import br.com.sgap.ui.activity.GravaPacientesActivity;
 import br.com.sgap.ui.activity.PacientesActivity;
 
 public class MainActivity extends AppCompatActivity {
-    Button btcriabd, btCadastrarFuncionario, btfuncionarios, btCadastrarPaciente, btpacientes, btGerarAtendimentos, btatendimentos;
+    Button btCadastrarFuncionario, btfuncionarios, btCadastrarPaciente, btpacientes, btGerarAtendimentos, btatendimentos;
     SQLiteDatabase bd;
 
     @Override
@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btcriabd = findViewById(R.id.btcriabd);
         btCadastrarFuncionario = findViewById(R.id.btCadastrarFuncionario);
         btfuncionarios = findViewById(R.id.btFuncionarios);
         btCadastrarPaciente = findViewById(R.id.btCadPac);
@@ -71,28 +70,24 @@ public class MainActivity extends AppCompatActivity {
             MainActivity.this.startActivity(consultaAtendimento);
         });
 
-        btcriabd.setOnClickListener(view -> {
-            try {
-                bd = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
-                bd.execSQL("create table if not exists funcionarios(numreg integer primary key" +
-                        " autoincrement, nome text not null, telefone text not null, " +
-                        " email text not null, cargo text not null)");
-                bd.execSQL("create table if not exists pacientes(id integer primary key" +
-                        " autoincrement, nome text not null, telefone text not null, email text not null)");
-                bd.execSQL("create table if not exists atendimentos(id integer primary key" +
-                        " autoincrement, paciente_id integer not null, medico_id integer not null, data text not null, " +
-                        " observacoes text, foreign key(paciente_id) references pacientes(id)," +
-                        " foreign key(medico_id) references funcionarios(numreg))");
-
-                AlertDialog.Builder dialogo = new AlertDialog.Builder(MainActivity.this);
-                dialogo.setTitle("Aviso")
-                        .setMessage("Banco de dados criado com sucesso!")
-                        .setNeutralButton("OK", null)
-                        .show();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
+        try {
+            bd = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
+            bd.execSQL("create table if not exists funcionarios(numreg integer primary key" +
+                    " autoincrement, nome text not null, telefone text not null, " +
+                    " email text not null, cargo text not null)");
+            bd.execSQL("create table if not exists pacientes(id integer primary key" +
+                    " autoincrement, nome text not null, telefone text not null, email text not null)");
+            bd.execSQL("create table if not exists atendimentos(id integer primary key" +
+                    " autoincrement, paciente_id integer not null, medico_id integer not null, data text not null, " +
+                    " observacoes text, foreign key(paciente_id) references pacientes(id)," +
+                    " foreign key(medico_id) references funcionarios(numreg))");
+        } catch (Exception e) {
+            e.printStackTrace();
+            AlertDialog.Builder dialogo = new AlertDialog.Builder(MainActivity.this);
+            dialogo.setTitle("Aviso")
+                    .setMessage("Falha no Armazenamento interno do App!")
+                    .setNeutralButton("OK", null)
+                    .show();
+        }
     }
 }
