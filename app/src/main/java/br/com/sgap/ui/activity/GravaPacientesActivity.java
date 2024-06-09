@@ -35,21 +35,18 @@ public class GravaPacientesActivity extends AppCompatActivity {
             MostraMensagem("Erro: " + e);
         }
 
-        btcadastrarPaciente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String nome = ednomep.getText().toString();
-                String telefone = edtelefonep.getText().toString();
-                String email = edemailp.getText().toString();
+        btcadastrarPaciente.setOnClickListener(v -> {
+            String nome = ednomep.getText().toString();
+            String telefone = edtelefonep.getText().toString();
+            String email = edemailp.getText().toString();
 
-                try{
-                    db.execSQL("insert into pacientes(nome, " +
-                            " telefone, email) values('" + nome + "', '"
-                            + telefone + "','" + email + "')");
-                    MostraMensagem("Dados cadastrados com sucesso");
-                }catch (Exception e){
-                    MostraMensagem("Error: " + e);
-                }
+            try{
+                db.execSQL("insert into pacientes(nome, " +
+                        " telefone, email) values('" + nome + "', '"
+                        + telefone + "','" + email + "')");
+                MostraMensagem("Dados cadastrados com sucesso");
+            }catch (Exception e){
+                MostraMensagem("Error: " + e);
             }
         });
 

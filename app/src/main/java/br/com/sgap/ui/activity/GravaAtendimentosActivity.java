@@ -36,25 +36,22 @@ public class GravaAtendimentosActivity extends AppCompatActivity {
             MostraMensagem("Erro: " + e);
         }
 
-        btcadastrarAtendimento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String paciente_id = edpaciente.getText().toString();
-                String medico_id = edmedico.getText().toString();
-                String data = eddata.getText().toString();
-                String observacoes = edobservacao.getText().toString();
+        btcadastrarAtendimento.setOnClickListener(v -> {
+            String paciente_id = edpaciente.getText().toString();
+            String medico_id = edmedico.getText().toString();
+            String data = eddata.getText().toString();
+            String observacoes = edobservacao.getText().toString();
 
-                try{
-                    if (paciente_id.isEmpty() || medico_id.isEmpty()) {
-                        MostraMensagem("Por favor, preencha os IDs do paciente e do médico.");
-                        return;
-                    }
-                    db.execSQL("INSERT INTO atendimentos(paciente_id, medico_id, data, observacoes) " +
-                            "VALUES('" + paciente_id + "', '" + medico_id + "', '" + data + "', '" + observacoes + "')");
-                    MostraMensagem("Dados cadastrados com sucesso");
-                }catch (Exception e){
-                    MostraMensagem("Error: " + e);
+            try{
+                if (paciente_id.isEmpty() || medico_id.isEmpty()) {
+                    MostraMensagem("Por favor, preencha os IDs do paciente e do médico.");
+                    return;
                 }
+                db.execSQL("INSERT INTO atendimentos(paciente_id, medico_id, data, observacoes) " +
+                        "VALUES('" + paciente_id + "', '" + medico_id + "', '" + data + "', '" + observacoes + "')");
+                MostraMensagem("Dados cadastrados com sucesso");
+            }catch (Exception e){
+                MostraMensagem("Error: " + e);
             }
         });
 

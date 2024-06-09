@@ -51,17 +51,15 @@ public class PacientesActivity extends AppCompatActivity {
             db = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
             CarregaDados();
 
-            imgprimeiro.setOnClickListener(new View.OnClickListener() {
-                @Override   public void onClick(View v) {
-                    if(c.getCount() > 0){
-                        c.moveToFirst();
-                        indice = 1;
-                        id = c.getInt(0);
-                        txtnomep.setText(c.getString(1));
-                        txttelefonep.setText(c.getString(2));
-                        txtemailp.setText(c.getString(3));
-                        txtstatusPac.setText(indice + " / " + c.getCount());
-                    }
+            imgprimeiro.setOnClickListener(v -> {
+                if(c.getCount() > 0){
+                    c.moveToFirst();
+                    indice = 1;
+                    id = c.getInt(0);
+                    txtnomep.setText(c.getString(1));
+                    txttelefonep.setText(c.getString(2));
+                    txtemailp.setText(c.getString(3));
+                    txtstatusPac.setText(indice + " / " + c.getCount());
                 }
             });
 
@@ -105,61 +103,50 @@ public class PacientesActivity extends AppCompatActivity {
                 }
             });
 
-            diAlteraInformacoes = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    String nome = txtnomep.getText().toString();
-                    String telefone = txttelefonep.getText().toString();
-                    String email = txtemailp.getText().toString();
+            diAlteraInformacoes = (dialog, which) -> {
+                String nome = txtnomep.getText().toString();
+                String telefone = txttelefonep.getText().toString();
+                String email = txtemailp.getText().toString();
 
-                    try {
-                        ContentValues valor = new ContentValues();
-                        valor.put("nome", nome);
-                        valor.put("telefone", telefone);
-                        valor.put("email", email);
-                        db.update("pacientes", valor, "id=" + id, null);
-                        MostraMensagem("Dados alterados com sucesso.");
-                    }   catch(Exception e) {
-                        MostraMensagem("Erro: " + e.toString());
-                    }
+                try {
+                    ContentValues valor = new ContentValues();
+                    valor.put("nome", nome);
+                    valor.put("telefone", telefone);
+                    valor.put("email", email);
+                    db.update("pacientes", valor, "id=" + id, null);
+                    MostraMensagem("Dados alterados com sucesso.");
+                }   catch(Exception e) {
+                    MostraMensagem("Erro: " + e.toString());
                 }
             };
 
-            diExcluiRegistro = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    db.execSQL("delete from pacientes where id = " + id);
-                    CarregaDados();
-                    MostraMensagem("Dados excluidos com sucesso!");
-                }
+            diExcluiRegistro = (dialog, which) -> {
+                db.execSQL("delete from pacientes where id = " + id);
+                CarregaDados();
+                MostraMensagem("Dados excluidos com sucesso!");
             };
 
-            btalterarp.setOnClickListener(new View.OnClickListener() {
-                @Override  public void onClick(View v) {
-                    AlertDialog.Builder dialogo = new
-                            AlertDialog.Builder(PacientesActivity.this);
-                    dialogo.setTitle("Confirma");
-                    dialogo.setMessage("Deseja alterar as informações");
-                    dialogo.setNegativeButton("Não", null);
-                    dialogo.setPositiveButton("Sim", diAlteraInformacoes);
-                    dialogo.show();
-                }
+            btalterarp.setOnClickListener(v -> {
+                AlertDialog.Builder dialogo = new
+                        AlertDialog.Builder(PacientesActivity.this);
+                dialogo.setTitle("Confirma");
+                dialogo.setMessage("Deseja alterar as informações");
+                dialogo.setNegativeButton("Não", null);
+                dialogo.setPositiveButton("Sim", diAlteraInformacoes);
+                dialogo.show();
             });
 
-            btexlcuirp.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (c.getCount() > 0) {
-                        android.app.AlertDialog.Builder dialogo = new
-                                android.app.AlertDialog.Builder(PacientesActivity.this);
-                        dialogo.setTitle("Confirma");
-                        dialogo.setMessage("Deseja excluir esse registro ?");
-                        dialogo.setNegativeButton("Não", null);
-                        dialogo.setPositiveButton("Sim", diExcluiRegistro);
-                        dialogo.show();
-                    } else {
-                        MostraMensagem("Não existem registros para excluir!");
-                    }
+            btexlcuirp.setOnClickListener(v -> {
+                if (c.getCount() > 0) {
+                    android.app.AlertDialog.Builder dialogo = new
+                            android.app.AlertDialog.Builder(PacientesActivity.this);
+                    dialogo.setTitle("Confirma");
+                    dialogo.setMessage("Deseja excluir esse registro ?");
+                    dialogo.setNegativeButton("Não", null);
+                    dialogo.setPositiveButton("Sim", diExcluiRegistro);
+                    dialogo.show();
+                } else {
+                    MostraMensagem("Não existem registros para excluir!");
                 }
             });
 

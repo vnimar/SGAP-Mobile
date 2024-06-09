@@ -36,22 +36,19 @@ public class GravaFuncionariosActivity extends Activity {
             MostraMensagem("Erro: " + e);
         }
 
-        btcadastrarFuncionario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String nome = ednome.getText().toString();
-                String telefone = edtelefone.getText().toString();
-                String email = edemail.getText().toString();
-                String cargo = edcargo.getText().toString();
+        btcadastrarFuncionario.setOnClickListener(v -> {
+            String nome = ednome.getText().toString();
+            String telefone = edtelefone.getText().toString();
+            String email = edemail.getText().toString();
+            String cargo = edcargo.getText().toString();
 
-                try{
-                    db.execSQL("insert into funcionarios(nome, " +
-                            " telefone, email, cargo) values('" + nome + "', '"
-                            + telefone + "','" + email + "','" + cargo + "')");
-                    MostraMensagem("Dados cadastrados com sucesso");
-                }catch (Exception e){
-                    MostraMensagem("Error: " + e);
-                }
+            try{
+                db.execSQL("insert into funcionarios(nome, " +
+                        " telefone, email, cargo) values('" + nome + "', '"
+                        + telefone + "','" + email + "','" + cargo + "')");
+                MostraMensagem("Dados cadastrados com sucesso");
+            }catch (Exception e){
+                MostraMensagem("Error: " + e);
             }
         });
 

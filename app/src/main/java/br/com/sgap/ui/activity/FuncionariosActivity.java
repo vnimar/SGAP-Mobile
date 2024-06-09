@@ -52,18 +52,16 @@ public class FuncionariosActivity extends AppCompatActivity {
             db = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
             CarregaDados();
 
-        imgprimeiro.setOnClickListener(new View.OnClickListener() {
-            @Override   public void onClick(View v) {
-                if(c.getCount() > 0){
-                    c.moveToFirst();
-                    indice = 1;
-                    numreg = c.getInt(0);
-                    txtnome.setText(c.getString(1));
-                    txttelefone.setText(c.getString(2));
-                    txtemail.setText(c.getString(3));
-                    txtcargo.setText(c.getString(4));
-                    txtstatusFunc.setText(indice + " / " + c.getCount());
-                }
+        imgprimeiro.setOnClickListener(v -> {
+            if(c.getCount() > 0){
+                c.moveToFirst();
+                indice = 1;
+                numreg = c.getInt(0);
+                txtnome.setText(c.getString(1));
+                txttelefone.setText(c.getString(2));
+                txtemail.setText(c.getString(3));
+                txtcargo.setText(c.getString(4));
+                txtstatusFunc.setText(indice + " / " + c.getCount());
             }
         });
 
@@ -110,64 +108,53 @@ public class FuncionariosActivity extends AppCompatActivity {
                 }
             });
 
-        diAlteraInformacoes = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //Altera as informações do registro na tabela
-                String nome = txtnome.getText().toString();
-                String telefone = txttelefone.getText().toString();
-                String email = txtemail.getText().toString();
-                String cargo = txtcargo.getText().toString();
+        diAlteraInformacoes = (dialog, which) -> {
+            //Altera as informações do registro na tabela
+            String nome = txtnome.getText().toString();
+            String telefone = txttelefone.getText().toString();
+            String email = txtemail.getText().toString();
+            String cargo = txtcargo.getText().toString();
 
-                try {
-                    ContentValues valor = new ContentValues();
-                    valor.put("nome", nome);
-                    valor.put("telefone", telefone);
-                    valor.put("email", email);
-                    valor.put("cargo", cargo);
-                    db.update("funcionarios", valor, "numreg=" + numreg, null);
-                    MostraMensagem("Dados alterados com sucesso.");
-                }   catch(Exception e) {
-                    MostraMensagem("Erro: " + e.toString());
-                }
+            try {
+                ContentValues valor = new ContentValues();
+                valor.put("nome", nome);
+                valor.put("telefone", telefone);
+                valor.put("email", email);
+                valor.put("cargo", cargo);
+                db.update("funcionarios", valor, "numreg=" + numreg, null);
+                MostraMensagem("Dados alterados com sucesso.");
+            }   catch(Exception e) {
+                MostraMensagem("Erro: " + e.toString());
             }
         };
 
-        diExcluiRegistro = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                db.execSQL("delete from funcionarios where numreg = " + numreg);
-                CarregaDados();
-                MostraMensagem("Dados excluidos com sucesso!");
-            }
+        diExcluiRegistro = (dialog, which) -> {
+            db.execSQL("delete from funcionarios where numreg = " + numreg);
+            CarregaDados();
+            MostraMensagem("Dados excluidos com sucesso!");
         };
 
-        btalterar.setOnClickListener(new View.OnClickListener() {
-            @Override  public void onClick(View v) {
-                AlertDialog.Builder dialogo = new
-                        AlertDialog.Builder(FuncionariosActivity.this);
-                dialogo.setTitle("Confirma");
-                dialogo.setMessage("Deseja alterar as informações");
-                dialogo.setNegativeButton("Não", null);
-                dialogo.setPositiveButton("Sim", diAlteraInformacoes);
-                dialogo.show();
-            }
+        btalterar.setOnClickListener(v -> {
+            AlertDialog.Builder dialogo = new
+                    AlertDialog.Builder(FuncionariosActivity.this);
+            dialogo.setTitle("Confirma");
+            dialogo.setMessage("Deseja alterar as informações");
+            dialogo.setNegativeButton("Não", null);
+            dialogo.setPositiveButton("Sim", diAlteraInformacoes);
+            dialogo.show();
         });
 
-        btexlcuir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (c.getCount() > 0) {
-                    android.app.AlertDialog.Builder dialogo = new
-                            android.app.AlertDialog.Builder(FuncionariosActivity.this);
-                    dialogo.setTitle("Confirma");
-                    dialogo.setMessage("Deseja excluir esse registro ?");
-                    dialogo.setNegativeButton("Não", null);
-                    dialogo.setPositiveButton("Sim", diExcluiRegistro);
-                    dialogo.show();
-                } else {
-                    MostraMensagem("Não existem registros para excluir!");
-                }
+        btexlcuir.setOnClickListener(v -> {
+            if (c.getCount() > 0) {
+                android.app.AlertDialog.Builder dialogo = new
+                        android.app.AlertDialog.Builder(FuncionariosActivity.this);
+                dialogo.setTitle("Confirma");
+                dialogo.setMessage("Deseja excluir esse registro ?");
+                dialogo.setNegativeButton("Não", null);
+                dialogo.setPositiveButton("Sim", diExcluiRegistro);
+                dialogo.show();
+            } else {
+                MostraMensagem("Não existem registros para excluir!");
             }
         });
 

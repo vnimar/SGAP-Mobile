@@ -111,85 +111,73 @@ public class AtendimentoActivity extends AppCompatActivity {
                 }
             });
 
-            diAlteraInformacoes = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    String pacienteNome = txtpaciente.getText().toString();
-                    String medicoNome = txtmedico.getText().toString();
-                    String data = txtdata.getText().toString();
-                    String observacao = txtobservacao.getText().toString();
+            diAlteraInformacoes = (dialog, which) -> {
+                String pacienteNome = txtpaciente.getText().toString();
+                String medicoNome = txtmedico.getText().toString();
+                String data = txtdata.getText().toString();
+                String observacao = txtobservacao.getText().toString();
 
-                    try {
-                        Cursor pacienteCursor = db.rawQuery("SELECT id FROM pacientes WHERE nome = ?", new String[]{pacienteNome});
-                        int pacienteId = -1;
-                        if (pacienteCursor.moveToFirst()) {
-                            pacienteId = pacienteCursor.getInt(0);
-                        }
-                        pacienteCursor.close();
-
-                        Cursor medicoCursor = db.rawQuery("SELECT numreg FROM funcionarios WHERE nome = ?", new String[]{medicoNome});
-                        int medicoId = -1;
-                        if (medicoCursor.moveToFirst()) {
-                            medicoId = medicoCursor.getInt(0);
-                        }
-                        medicoCursor.close();
-
-                        if (pacienteId == -1 || medicoId == -1) {
-                            MostraMensagem("Paciente ou médico não encontrado.");
-                            return;
-                        }
-
-                        ContentValues valor = new ContentValues();
-                        valor.put("paciente_id", pacienteId);
-                        valor.put("medico_id", medicoId);
-                        valor.put("data", data);
-                        valor.put("observacoes", observacao);
-
-                        db.update("atendimentos", valor, "id=" + id, null);
-                        MostraMensagem("Dados alterados com sucesso.");
-
-                    } catch (Exception e) {
-                        MostraMensagem("Erro: " + e.toString());
+                try {
+                    Cursor pacienteCursor = db.rawQuery("SELECT id FROM pacientes WHERE nome = ?", new String[]{pacienteNome});
+                    int pacienteId = -1;
+                    if (pacienteCursor.moveToFirst()) {
+                        pacienteId = pacienteCursor.getInt(0);
                     }
+                    pacienteCursor.close();
+
+                    Cursor medicoCursor = db.rawQuery("SELECT numreg FROM funcionarios WHERE nome = ?", new String[]{medicoNome});
+                    int medicoId = -1;
+                    if (medicoCursor.moveToFirst()) {
+                        medicoId = medicoCursor.getInt(0);
+                    }
+                    medicoCursor.close();
+
+                    if (pacienteId == -1 || medicoId == -1) {
+                        MostraMensagem("Paciente ou médico não encontrado.");
+                        return;
+                    }
+
+                    ContentValues valor = new ContentValues();
+                    valor.put("paciente_id", pacienteId);
+                    valor.put("medico_id", medicoId);
+                    valor.put("data", data);
+                    valor.put("observacoes", observacao);
+
+                    db.update("atendimentos", valor, "id=" + id, null);
+                    MostraMensagem("Dados alterados com sucesso.");
+
+                } catch (Exception e) {
+                    MostraMensagem("Erro: " + e.toString());
                 }
             };
 
-            btalterar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    AlertDialog.Builder dialogo = new
-                            AlertDialog.Builder(AtendimentoActivity.this);
-                    dialogo.setTitle("Confirma");
-                    dialogo.setMessage("Deseja alterar as informações");
-                    dialogo.setNegativeButton("Não", null);
-                    dialogo.setPositiveButton("Sim", diAlteraInformacoes);
-                    dialogo.show();
-                }
+            btalterar.setOnClickListener(v -> {
+                AlertDialog.Builder dialogo = new
+                        AlertDialog.Builder(AtendimentoActivity.this);
+                dialogo.setTitle("Confirma");
+                dialogo.setMessage("Deseja alterar as informações");
+                dialogo.setNegativeButton("Não", null);
+                dialogo.setPositiveButton("Sim", diAlteraInformacoes);
+                dialogo.show();
             });
 
-            diExcluiRegistro = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    db.execSQL("delete from atendimentos where id = " + id);
-                    CarregaDados();
-                    MostraMensagem("Dados excluidos com sucesso!");
-                }
+            diExcluiRegistro = (dialog, which) -> {
+                db.execSQL("delete from atendimentos where id = " + id);
+                CarregaDados();
+                MostraMensagem("Dados excluidos com sucesso!");
             };
 
-            btexlcuir.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (c.getCount() > 0) {
-                        android.app.AlertDialog.Builder dialogo = new
-                                android.app.AlertDialog.Builder(AtendimentoActivity.this);
-                        dialogo.setTitle("Confirma");
-                        dialogo.setMessage("Deseja excluir esse registro ?");
-                        dialogo.setNegativeButton("Não", null);
-                        dialogo.setPositiveButton("Sim", diExcluiRegistro);
-                        dialogo.show();
-                    } else {
-                        MostraMensagem("Não existem registros para excluir!");
-                    }
+            btexlcuir.setOnClickListener(v -> {
+                if (c.getCount() > 0) {
+                    android.app.AlertDialog.Builder dialogo = new
+                            android.app.AlertDialog.Builder(AtendimentoActivity.this);
+                    dialogo.setTitle("Confirma");
+                    dialogo.setMessage("Deseja excluir esse registro ?");
+                    dialogo.setNegativeButton("Não", null);
+                    dialogo.setPositiveButton("Sim", diExcluiRegistro);
+                    dialogo.show();
+                } else {
+                    MostraMensagem("Não existem registros para excluir!");
                 }
             });
 
