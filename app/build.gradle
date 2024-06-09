@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.appsgap'
+    namespace 'br.com.sgap'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.appsgap"
+        applicationId "br.com.sgap"
         minSdk 24
         targetSdk 33
         versionCode 1

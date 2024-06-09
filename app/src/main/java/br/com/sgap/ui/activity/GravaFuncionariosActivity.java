@@ -1,4 +1,4 @@
-package com.example.appsgap;
+package br.com.sgap.ui.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AlertDialog;
+
+import br.com.sgap.R;
 
 public class GravaFuncionariosActivity extends Activity {
     Button btcadastrarFuncionario, btvoltarf;

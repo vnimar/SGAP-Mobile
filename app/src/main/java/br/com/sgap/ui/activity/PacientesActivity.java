@@ -1,4 +1,4 @@
-package com.example.appsgap;
+package br.com.sgap.ui.activity;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -12,12 +12,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import br.com.sgap.R;
 
 public class PacientesActivity extends AppCompatActivity {
     EditText txtnomep, txttelefonep, txtemailp;

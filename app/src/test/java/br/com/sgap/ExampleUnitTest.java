@@ -1,4 +1,4 @@
-package com.example.appsgap;
+package br.com.sgap;
 
 import org.junit.Test;
 

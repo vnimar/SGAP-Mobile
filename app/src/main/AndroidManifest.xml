@@ -10,31 +10,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppSGAP"
+        android:theme="@style/Theme.SGAP"
         tools:targetApi="31">
         <activity
-            android:name=".AtendimentoActivity"
+            android:name="br.com.sgap.ui.activity.AtendimentoActivity"
             android:exported="false" />
         <activity
-            android:name=".GravaAtendimentosActivity"
+            android:name="br.com.sgap.ui.activity.GravaAtendimentosActivity"
             android:exported="false" />
         <activity
-            android:name=".PacientesActivity"
+            android:name="br.com.sgap.ui.activity.PacientesActivity"
             android:exported="false" />
         <activity
-            android:name=".GravaPacientesActivity"
+            android:name="br.com.sgap.ui.activity.GravaPacientesActivity"
             android:exported="false" />
         <activity
-            android:name=".FuncionariosActivity"
+            android:name="br.com.sgap.ui.activity.FuncionariosActivity"
             android:exported="false" />
         <activity
-            android:name=".GravaFuncionariosActivity"
+            android:name="br.com.sgap.ui.activity.GravaFuncionariosActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity_G_Funcionarios"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name="br.com.sgap.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

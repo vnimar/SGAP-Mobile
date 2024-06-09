@@ -1,15 +1,22 @@
-package com.example.appsgap;
+package br.com.sgap.ui;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import br.com.sgap.R;
+
+import br.com.sgap.ui.activity.AtendimentoActivity;
+import br.com.sgap.ui.activity.FuncionariosActivity;
+import br.com.sgap.ui.activity.GravaAtendimentosActivity;
+import br.com.sgap.ui.activity.GravaFuncionariosActivity;
+import br.com.sgap.ui.activity.GravaPacientesActivity;
+import br.com.sgap.ui.activity.PacientesActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button btcriabd, btCadastrarFuncionario, btfuncionarios, btCadastrarPaciente, btpacientes, btGerarAtendimentos, btatendimentos;
@@ -28,58 +35,40 @@ public class MainActivity extends AppCompatActivity {
         btGerarAtendimentos = findViewById(R.id.btGerarAtendimento);
         btatendimentos = findViewById(R.id.btAtendimentos);
 
-        btCadastrarFuncionario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gravaFuncionariosActivity = new Intent(MainActivity.this,
-                        GravaFuncionariosActivity.class);
-                MainActivity.this.startActivity(gravaFuncionariosActivity);
-            }
+        btCadastrarFuncionario.setOnClickListener(v -> {
+            Intent gravaFuncionariosActivity = new Intent(MainActivity.this,
+                    GravaFuncionariosActivity.class);
+            MainActivity.this.startActivity(gravaFuncionariosActivity);
         });
 
-        btCadastrarPaciente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gravaPaciente = new Intent(MainActivity.this,
-                        GravaPacientesActivity.class);
-                MainActivity.this.startActivity(gravaPaciente);
-            }
+        btCadastrarPaciente.setOnClickListener(v -> {
+            Intent gravaPaciente = new Intent(MainActivity.this,
+                    GravaPacientesActivity.class);
+            MainActivity.this.startActivity(gravaPaciente);
         });
 
-        btGerarAtendimentos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gravaAtendimento = new Intent(MainActivity.this,
-                        GravaAtendimentosActivity.class);
-                MainActivity.this.startActivity(gravaAtendimento);
-            }
+        btGerarAtendimentos.setOnClickListener(v -> {
+            Intent gravaAtendimento = new Intent(MainActivity.this,
+                    GravaAtendimentosActivity.class);
+            MainActivity.this.startActivity(gravaAtendimento);
         });
 
-        btfuncionarios.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent consultaFuncionarios = new Intent(MainActivity.this,
-                        FuncionariosActivity.class);
-                MainActivity.this.startActivity(consultaFuncionarios);
-            }
+        btfuncionarios.setOnClickListener(v -> {
+            Intent consultaFuncionarios = new Intent(MainActivity.this,
+                    FuncionariosActivity.class);
+            MainActivity.this.startActivity(consultaFuncionarios);
         });
 
-        btpacientes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent consultaPaciente = new Intent(MainActivity.this,
-                        PacientesActivity.class);
-                MainActivity.this.startActivity(consultaPaciente);
-            }
+        btpacientes.setOnClickListener(v -> {
+            Intent consultaPaciente = new Intent(MainActivity.this,
+                    PacientesActivity.class);
+            MainActivity.this.startActivity(consultaPaciente);
         });
 
-        btatendimentos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent consultaAtendimento = new Intent(MainActivity.this,
-                        AtendimentoActivity.class);
-                MainActivity.this.startActivity(consultaAtendimento);
-            }
+        btatendimentos.setOnClickListener(v -> {
+            Intent consultaAtendimento = new Intent(MainActivity.this,
+                    AtendimentoActivity.class);
+            MainActivity.this.startActivity(consultaAtendimento);
         });
 
         btcriabd.setOnClickListener(view -> {

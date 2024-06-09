@@ -1,4 +1,4 @@
-package com.example.appsgap;
+package br.com.sgap.ui.activity;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import br.com.sgap.R;
 
 public class FuncionariosActivity extends AppCompatActivity {
     EditText txtnome, txttelefone, txtemail, txtcargo;

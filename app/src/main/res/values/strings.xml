@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppSGAP</string>
+    <string name="app_name">SGAP</string>
     <string name="sistema_gerenciador_de_clinicas_sgap">Sistema Gerenciador de Clinicas - SGAP</string>
     <string name="escolha_uma_das_op_es_abaixo">Escolha uma das opções abaixo:</string>
     <string name="iniciar_banco_de_dados">Iniciar Banco de Dados</string>

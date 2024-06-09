@@ -1,4 +1,4 @@
-package com.example.appsgap;
+package br.com.sgap.ui.activity;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -12,12 +12,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import br.com.sgap.R;
 
 public class AtendimentoActivity extends AppCompatActivity {
     EditText txtpaciente, txtmedico, txtdata, txtobservacao;
@@ -29,6 +27,7 @@ public class AtendimentoActivity extends AppCompatActivity {
     Cursor c;
     DialogInterface.OnClickListener diAlteraInformacoes;
     DialogInterface.OnClickListener diExcluiRegistro;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +53,9 @@ public class AtendimentoActivity extends AppCompatActivity {
             CarregaDados();
 
             imgprimeiro.setOnClickListener(new View.OnClickListener() {
-                @Override   public void onClick(View v) {
-                    if(c.getCount() > 0){
+                @Override
+                public void onClick(View v) {
+                    if (c.getCount() > 0) {
                         c.moveToFirst();
                         indice = 1;
                         id = c.getInt(0);
@@ -85,7 +85,7 @@ public class AtendimentoActivity extends AppCompatActivity {
 
             imgproximo.setOnClickListener(view -> {
                 if (c.getCount() > 0) {
-                    if(indice != c.getCount()) {
+                    if (indice != c.getCount()) {
                         indice++;
                         c.moveToNext();
                         id = c.getInt(0);
@@ -148,14 +148,15 @@ public class AtendimentoActivity extends AppCompatActivity {
                         db.update("atendimentos", valor, "id=" + id, null);
                         MostraMensagem("Dados alterados com sucesso.");
 
-                    }   catch(Exception e) {
+                    } catch (Exception e) {
                         MostraMensagem("Erro: " + e.toString());
                     }
                 }
             };
 
             btalterar.setOnClickListener(new View.OnClickListener() {
-                @Override  public void onClick(View v) {
+                @Override
+                public void onClick(View v) {
                     AlertDialog.Builder dialogo = new
                             AlertDialog.Builder(AtendimentoActivity.this);
                     dialogo.setTitle("Confirma");
@@ -192,7 +193,7 @@ public class AtendimentoActivity extends AppCompatActivity {
                 }
             });
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             MostraMensagem("Erro: " + e);
         }
 
@@ -201,7 +202,7 @@ public class AtendimentoActivity extends AppCompatActivity {
         });
     }
 
-    public void CarregaDados(){
+    public void CarregaDados() {
         String query = "SELECT atendimentos.id, pacientes.nome AS paciente_nome, funcionarios.nome AS medico_nome, atendimentos.data, atendimentos.observacoes " +
                 "FROM atendimentos " +
                 "JOIN pacientes ON atendimentos.paciente_id = pacientes.id " +
@@ -212,7 +213,7 @@ public class AtendimentoActivity extends AppCompatActivity {
         txtmedico.setText("");
         txtdata.setText("");
         txtobservacao.setText("");
-        if(c.getCount() > 0) {
+        if (c.getCount() > 0) {
             c.moveToFirst();
             indice = 1;
             id = c.getInt(0);

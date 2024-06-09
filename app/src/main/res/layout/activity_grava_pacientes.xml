@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".GravaPacientesActivity">
+    tools:context="br.com.sgap.ui.activity.GravaPacientesActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
