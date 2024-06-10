@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="wrap_content"
+
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:background="@color/azul_escuro">
+
+        <ImageView
+
+            android:id="@+id/imgSis"
+
+            android:layout_width="96dp"
+
+            android:layout_height="96dp"
+
+            android:contentDescription="@string/todo"
+
+            android:src="@drawable/logoclin"
+            tools:ignore="ImageContrastCheck"
+            tools:srcCompat="@drawable/logoclin" />
+
+        <TextView
+
+            android:id="@+id/textView1"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            />
+
+
+        <LinearLayout
+
+            android:id="@+id/layoutCorFundo"
+
+            android:layout_width="fill_parent"
+
+            android:layout_height="match_parent"
+
+            android:background="@color/azul_escuro"
+
+            android:gravity="center">
+
+
+            <TextView
+
+                android:id="@+id/textView2"
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:text="@string/sistema_gerenciador_de_clinicas_sgap"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/layoutImagemFundo"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="fill_parent"
+
+        android:orientation="vertical">
+
+
+        <TextView
+
+            android:id="@+id/textView3"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/passe_seu_usario_e_senha_para_acessar_o_sistema"
+
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:padding="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:hint="@string/usuario"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:hint="@string/senha"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:orientation="vertical"
+            android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:text="@string/login" />
+
+    </LinearLayout>
+
+</LinearLayout>

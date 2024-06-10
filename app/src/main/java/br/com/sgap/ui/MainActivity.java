@@ -2,6 +2,7 @@ package br.com.sgap.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import br.com.sgap.ui.activity.LoginActivity;
 import br.com.sgap.R;
 
 import br.com.sgap.ui.activity.AtendimentoActivity;
@@ -33,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
         btpacientes = findViewById(R.id.btPacientes);
         btGerarAtendimentos = findViewById(R.id.btGerarAtendimento);
         btatendimentos = findViewById(R.id.btAtendimentos);
+
+        if (!isUserLoggedIn()) {
+            Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(loginIntent);
+            finish();
+            return;
+        }
 
         btCadastrarFuncionario.setOnClickListener(v -> {
             Intent gravaFuncionariosActivity = new Intent(MainActivity.this,
@@ -81,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     " autoincrement, paciente_id integer not null, medico_id integer not null, data text not null, " +
                     " observacoes text, foreign key(paciente_id) references pacientes(id)," +
                     " foreign key(medico_id) references funcionarios(numreg))");
+            bd.execSQL("create table if not exists usuarios(id integer primary key autoincrement, usuario text not null, senha text not null)");
         } catch (Exception e) {
             e.printStackTrace();
             AlertDialog.Builder dialogo = new AlertDialog.Builder(MainActivity.this);
@@ -89,5 +99,10 @@ public class MainActivity extends AppCompatActivity {
                     .setNeutralButton("OK", null)
                     .show();
         }
+    }
+    private boolean isUserLoggedIn() {
+        // Implementar a lógica para verificar se o usuário está logado
+        // Pode ser usando SharedPreferences para armazenar o estado de login
+        return getSharedPreferences("sgap", MODE_PRIVATE).getBoolean("logged_in", false);
     }
 }

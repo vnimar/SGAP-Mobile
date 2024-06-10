@@ -12,33 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SGAP"
         tools:targetApi="31">
+
         <activity
-            android:name="br.com.sgap.ui.activity.AtendimentoActivity"
-            android:exported="false" />
-        <activity
-            android:name="br.com.sgap.ui.activity.GravaAtendimentosActivity"
-            android:exported="false" />
-        <activity
-            android:name="br.com.sgap.ui.activity.PacientesActivity"
-            android:exported="false" />
-        <activity
-            android:name="br.com.sgap.ui.activity.GravaPacientesActivity"
-            android:exported="false" />
-        <activity
-            android:name="br.com.sgap.ui.activity.FuncionariosActivity"
-            android:exported="false" />
-        <activity
-            android:name="br.com.sgap.ui.activity.GravaFuncionariosActivity"
-            android:exported="false" />
-        <activity
-            android:name="br.com.sgap.ui.MainActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.MainActivity" android:exported="false" />
+        <activity android:name=".ui.activity.AtendimentoActivity" android:exported="false" />
+        <activity android:name=".ui.activity.GravaAtendimentosActivity" android:exported="false" />
+        <activity android:name=".ui.activity.PacientesActivity" android:exported="false" />
+        <activity android:name=".ui.activity.GravaPacientesActivity" android:exported="false" />
+        <activity android:name=".ui.activity.FuncionariosActivity" android:exported="false" />
+        <activity android:name=".ui.activity.GravaFuncionariosActivity" android:exported="false" />
     </application>
 
 </manifest>
