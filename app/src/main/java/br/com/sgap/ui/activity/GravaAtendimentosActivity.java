@@ -44,14 +44,19 @@ public class GravaAtendimentosActivity extends AppCompatActivity {
 
             try {
                 if (paciente_id.isEmpty() || medico_id.isEmpty()) {
-                    MostraMensagem("Por favor, preencha os IDs do paciente e do médico.");
+                    AlertDialog.Builder dialogoObgt = new AlertDialog.Builder(GravaAtendimentosActivity.this);
+                    dialogoObgt.setTitle("Aviso");
+                    dialogoObgt.setMessage("Por favor, preencha os campos de IDs!");
+                    dialogoObgt.setNeutralButton("OK", null);
+                    dialogoObgt.show();
                     return;
                 }
                 db.execSQL("INSERT INTO atendimentos(paciente_id, medico_id, data, observacoes) " +
                         "VALUES('" + paciente_id + "', '" + medico_id + "', '" + data + "', '" + observacoes + "')");
                 MostraMensagem("Dados cadastrados com sucesso");
             } catch (Exception e) {
-                MostraMensagem("Error: " + e);
+                e.printStackTrace();
+                MostraMensagem("Error ao Cadastrar atendimento!");
             }
         });
 
@@ -60,11 +65,13 @@ public class GravaAtendimentosActivity extends AppCompatActivity {
         });
     }
 
-    public void MostraMensagem(String srt) {
+    public void MostraMensagem(String mensagem) {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(GravaAtendimentosActivity.this);
         dialogo.setTitle("Aviso");
-        dialogo.setMessage(srt);
-        dialogo.setNeutralButton("OK", null);
+        dialogo.setMessage(mensagem);
+        dialogo.setNeutralButton("OK", (dialogInterface, i) -> {
+            finish();
+        });
         dialogo.show();
     }
 }

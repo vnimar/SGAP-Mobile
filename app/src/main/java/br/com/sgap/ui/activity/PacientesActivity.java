@@ -116,7 +116,8 @@ public class PacientesActivity extends AppCompatActivity {
                     db.update("pacientes", valor, "id=" + id, null);
                     MostraMensagem("Dados alterados com sucesso.");
                 }   catch(Exception e) {
-                    MostraMensagem("Erro: " + e.toString());
+                    e.printStackTrace();
+                    MostraMensagem("Erro ao alterar paciente!");
                 }
             };
 
@@ -151,7 +152,8 @@ public class PacientesActivity extends AppCompatActivity {
             });
 
         } catch (Exception e) {
-            MostraMensagem("Erro: " + e);
+            e.printStackTrace();
+            MostraMensagem("Erro ao recuperar Pacientes!");
         }
         btvoltarp.setOnClickListener(view -> {
             PacientesActivity.this.finish();
@@ -178,12 +180,13 @@ public class PacientesActivity extends AppCompatActivity {
         }
     }
 
-    public void MostraMensagem(String srt) {
+    public void MostraMensagem(String mensagem) {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(PacientesActivity.this);
         dialogo.setTitle("Aviso");
-        dialogo.setMessage(srt);
-        dialogo.setMessage("");
-        dialogo.setNeutralButton("OK", null);
+        dialogo.setMessage(mensagem);
+        dialogo.setNeutralButton("OK", (dialogInterface, i) -> {
+            finish();
+        });
         dialogo.show();
     }
 }

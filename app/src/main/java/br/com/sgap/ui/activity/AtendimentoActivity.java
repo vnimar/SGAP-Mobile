@@ -179,7 +179,8 @@ public class AtendimentoActivity extends AppCompatActivity {
             });
 
         } catch (Exception e) {
-            MostraMensagem("Erro: " + e);
+            e.printStackTrace();
+            MostraMensagem("Erro ao recuperar Atendimentos!");
         }
 
         btvoltar.setOnClickListener(view -> {
@@ -216,7 +217,9 @@ public class AtendimentoActivity extends AppCompatActivity {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(AtendimentoActivity.this);
         dialogo.setTitle("Aviso");
         dialogo.setMessage(srt);
-        dialogo.setNeutralButton("OK", null);
+        dialogo.setNeutralButton("OK", (dialogInterface, i) -> {
+            finish();
+        });
         dialogo.show();
     }
 }

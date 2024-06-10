@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -32,8 +31,9 @@ public class GravaFuncionariosActivity extends Activity {
 
         try {
             db = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
-        }catch (Exception e) {
-            MostraMensagem("Erro: " + e);
+        } catch (Exception e) {
+            e.printStackTrace();
+            MostraMensagem("Erro ao acessar o armazenamento!");
         }
 
         btcadastrarFuncionario.setOnClickListener(v -> {
@@ -42,13 +42,14 @@ public class GravaFuncionariosActivity extends Activity {
             String email = edemail.getText().toString();
             String cargo = edcargo.getText().toString();
 
-            try{
+            try {
                 db.execSQL("insert into funcionarios(nome, " +
                         " telefone, email, cargo) values('" + nome + "', '"
                         + telefone + "','" + email + "','" + cargo + "')");
                 MostraMensagem("Dados cadastrados com sucesso");
-            }catch (Exception e){
-                MostraMensagem("Error: " + e);
+            } catch (Exception e) {
+                e.printStackTrace();
+                MostraMensagem("Erro ao cadastrar funcionário!");
             }
         });
 
@@ -57,10 +58,10 @@ public class GravaFuncionariosActivity extends Activity {
         });
     }
 
-    public void MostraMensagem(String srt) {
+    public void MostraMensagem(String mensagem) {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(GravaFuncionariosActivity.this);
         dialogo.setTitle("Aviso");
-        dialogo.setMessage(srt);
+        dialogo.setMessage(mensagem);
         dialogo.setNeutralButton("OK", (dialogInterface, i) -> {
             finish();
         });

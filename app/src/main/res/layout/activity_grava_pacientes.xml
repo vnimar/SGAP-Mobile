@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#3ba0e2" >
+        android:background="@color/azul_escuro" >
 
         <ImageView
             android:id="@+id/iconuser"
@@ -30,7 +31,7 @@
             android:id="@+id/layoutCorFundo"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:background="#4B0EA3"
+            android:background="@color/azul_escuro"
             android:gravity="center" >
 
             <TextView
@@ -121,23 +122,36 @@
             android:textColorHint="#546E7A"
             tools:ignore="VisualLintTextFieldSize" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center" >
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btcadastrarPaciente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cadastrar" />
+                android:backgroundTint="@color/azul"
+                android:text="@string/cadastrar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.46"
+                app:layout_constraintStart_toEndOf="@+id/btvoltarcp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.389" />
 
             <Button
                 android:id="@+id/btvoltarcp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/voltar" />
+                android:backgroundTint="@color/azul"
+                android:text="@string/voltar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.263"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.393" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </LinearLayout>

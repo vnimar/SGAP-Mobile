@@ -32,7 +32,8 @@ public class GravaPacientesActivity extends AppCompatActivity {
         try {
             db = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
         }catch (Exception e) {
-            MostraMensagem("Erro: " + e);
+            e.printStackTrace();
+            MostraMensagem("Erro no Armazenamento interno!");
         }
 
         btcadastrarPaciente.setOnClickListener(v -> {
@@ -46,7 +47,8 @@ public class GravaPacientesActivity extends AppCompatActivity {
                         + telefone + "','" + email + "')");
                 MostraMensagem("Dados cadastrados com sucesso");
             }catch (Exception e){
-                MostraMensagem("Error: " + e);
+                e.printStackTrace();
+                MostraMensagem("Erro ao cadastrar paciente!");
             }
         });
 
@@ -55,11 +57,13 @@ public class GravaPacientesActivity extends AppCompatActivity {
         });
     }
 
-    public void MostraMensagem(String srt) {
+    public void MostraMensagem(String mensagem) {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(GravaPacientesActivity.this);
         dialogo.setTitle("Aviso");
-        dialogo.setMessage(srt);
-        dialogo.setNeutralButton("OK", null);
+        dialogo.setMessage(mensagem);
+        dialogo.setNeutralButton("OK", (dialogInterface, i) -> {
+            finish();
+        });
         dialogo.show();
     }
 }

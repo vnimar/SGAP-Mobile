@@ -159,7 +159,8 @@ public class FuncionariosActivity extends AppCompatActivity {
         });
 
         }catch (Exception e) {
-            MostraMensagem("Erro: " + e);
+            e.printStackTrace();
+            MostraMensagem("Erro ao recuperar Funcionários");
         }
 
         btvoltar.setOnClickListener(view -> {
@@ -192,7 +193,9 @@ public class FuncionariosActivity extends AppCompatActivity {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(FuncionariosActivity.this);
         dialogo.setTitle("Aviso");
         dialogo.setMessage(mensagem);
-        dialogo.setNeutralButton("OK", null);
+        dialogo.setNeutralButton("OK", (dialogInterface, i) -> {
+            finish();
+        });
         dialogo.show();
     }
 }
