@@ -101,8 +101,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private boolean isUserLoggedIn() {
-        // Implementar a lógica para verificar se o usuário está logado
-        // Pode ser usando SharedPreferences para armazenar o estado de login
         return getSharedPreferences("sgap", MODE_PRIVATE).getBoolean("logged_in", false);
     }
 }

@@ -38,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
             bd = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
             bd.execSQL("CREATE TABLE IF NOT EXISTS usuarios(id INTEGER PRIMARY KEY AUTOINCREMENT, usuario TEXT NOT NULL, senha TEXT NOT NULL)");
 
-            // Inserir um usuário de teste se a tabela estiver vazia
             Cursor cursor = bd.rawQuery("SELECT COUNT(*) FROM usuarios", null);
             cursor.moveToFirst();
             int count = cursor.getInt(0);
@@ -62,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
                 String password = etPassword.getText().toString();
 
                 if (authenticate(username, password)) {
-                    // Salvar o estado de login usando SharedPreferences
                     SharedPreferences.Editor editor = getSharedPreferences("sgap", MODE_PRIVATE).edit();
                     editor.putBoolean("logged_in", true);
                     editor.apply();
