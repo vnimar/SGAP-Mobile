@@ -32,7 +32,7 @@ public class GravaAtendimentosActivity extends AppCompatActivity {
 
         try {
             db = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
-        }catch (Exception e) {
+        } catch (Exception e) {
             MostraMensagem("Erro: " + e);
         }
 
@@ -42,7 +42,7 @@ public class GravaAtendimentosActivity extends AppCompatActivity {
             String data = eddata.getText().toString();
             String observacoes = edobservacao.getText().toString();
 
-            try{
+            try {
                 if (paciente_id.isEmpty() || medico_id.isEmpty()) {
                     MostraMensagem("Por favor, preencha os IDs do paciente e do médico.");
                     return;
@@ -50,7 +50,7 @@ public class GravaAtendimentosActivity extends AppCompatActivity {
                 db.execSQL("INSERT INTO atendimentos(paciente_id, medico_id, data, observacoes) " +
                         "VALUES('" + paciente_id + "', '" + medico_id + "', '" + data + "', '" + observacoes + "')");
                 MostraMensagem("Dados cadastrados com sucesso");
-            }catch (Exception e){
+            } catch (Exception e) {
                 MostraMensagem("Error: " + e);
             }
         });

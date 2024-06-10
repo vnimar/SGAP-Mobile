@@ -6,7 +6,7 @@
     <string name="todo">TODO</string>
     <string name="cadastrar_funcionario">Cadastrar Funcionario</string>
     <string name="cadastrar_paciente">Cadastrar Paciente</string>
-    <string name="gerar_atendimentos">Gerar Atendimentos</string>
+    <string name="novo_atendimento">Novo Atendimento</string>
     <string name="funcionarios">Funcionarios</string>
     <string name="pacientes">Pacientes</string>
     <string name="atendimentos">Atendimentos</string>

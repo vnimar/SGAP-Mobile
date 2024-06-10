@@ -16,9 +16,9 @@
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/iconuser"
+            android:src="@drawable/add_user"
             tools:ignore="ImageContrastCheck"
-            tools:srcCompat="@drawable/iconuser" />
+            tools:srcCompat="@drawable/add_user" />
 
         <TextView
             android:id="@+id/textView1"

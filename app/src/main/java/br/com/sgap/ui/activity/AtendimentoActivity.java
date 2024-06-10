@@ -52,19 +52,16 @@ public class AtendimentoActivity extends AppCompatActivity {
             db = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
             CarregaDados();
 
-            imgprimeiro.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (c.getCount() > 0) {
-                        c.moveToFirst();
-                        indice = 1;
-                        id = c.getInt(0);
-                        txtpaciente.setText(c.getString(1));
-                        txtmedico.setText(c.getString(2));
-                        txtdata.setText(c.getString(3));
-                        txtobservacao.setText(c.getString(4));
-                        txtstatusAtendimento.setText(indice + " / " + c.getCount());
-                    }
+            imgprimeiro.setOnClickListener(v -> {
+                if (c.getCount() > 0) {
+                    c.moveToFirst();
+                    indice = 1;
+                    id = c.getInt(0);
+                    txtpaciente.setText(c.getString(1));
+                    txtmedico.setText(c.getString(2));
+                    txtdata.setText(c.getString(3));
+                    txtobservacao.setText(c.getString(4));
+                    txtstatusAtendimento.setText(indice + " / " + c.getCount());
                 }
             });
 
@@ -147,7 +144,7 @@ public class AtendimentoActivity extends AppCompatActivity {
                     MostraMensagem("Dados alterados com sucesso.");
 
                 } catch (Exception e) {
-                    MostraMensagem("Erro: " + e.toString());
+                    MostraMensagem("Erro: " + e);
                 }
             };
 
@@ -219,7 +216,6 @@ public class AtendimentoActivity extends AppCompatActivity {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(AtendimentoActivity.this);
         dialogo.setTitle("Aviso");
         dialogo.setMessage(srt);
-        dialogo.setMessage("");
         dialogo.setNeutralButton("OK", null);
         dialogo.show();
     }
