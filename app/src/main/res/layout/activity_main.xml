@@ -18,7 +18,7 @@
 
         android:layout_height="wrap_content"
 
-        android:background="#3ba0e2">
+        android:background="@color/azul_escuro">
 
         <ImageView
 
@@ -55,7 +55,7 @@
 
             android:layout_height="match_parent"
 
-            android:background="#3ba0e2"
+            android:background="@color/azul_escuro"
 
             android:gravity="center">
 
@@ -72,7 +72,7 @@
 
                 android:textAppearance="?android:attr/textAppearanceLarge"
 
-                android:textColor="#37474F" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -113,6 +113,7 @@
                 android:id="@+id/btCadastrarFuncionario"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/azul"
                 android:text="@string/cadastrar_funcionario"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -127,6 +128,7 @@
                 android:id="@+id/btCadPac"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/azul"
                 android:text="@string/cadastrar_paciente"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -140,6 +142,7 @@
                 android:id="@+id/btGerarAtendimento"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/azul"
                 android:text="@string/gerar_atendimentos"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -153,6 +156,7 @@
                 android:id="@+id/btFuncionarios"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/azul"
                 android:text="@string/funcionarios"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -166,6 +170,7 @@
                 android:id="@+id/btPacientes"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/azul"
                 android:text="@string/pacientes"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -179,6 +184,7 @@
                 android:id="@+id/btAtendimentos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/azul"
                 android:text="@string/atendimentos"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"

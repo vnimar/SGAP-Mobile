@@ -124,7 +124,7 @@ public class FuncionariosActivity extends AppCompatActivity {
                 db.update("funcionarios", valor, "numreg=" + numreg, null);
                 MostraMensagem("Dados alterados com sucesso.");
             }   catch(Exception e) {
-                MostraMensagem("Erro: " + e.toString());
+                MostraMensagem("Erro: " + e);
             }
         };
 
@@ -188,11 +188,10 @@ public class FuncionariosActivity extends AppCompatActivity {
             txtstatusFunc.setText("Nenhum Registro");
         }
     }
-    public void MostraMensagem(String srt) {
+    public void MostraMensagem(String mensagem) {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(FuncionariosActivity.this);
         dialogo.setTitle("Aviso");
-        dialogo.setMessage(srt);
-        dialogo.setMessage("");
+        dialogo.setMessage(mensagem);
         dialogo.setNeutralButton("OK", null);
         dialogo.show();
     }

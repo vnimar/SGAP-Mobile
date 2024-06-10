@@ -61,7 +61,9 @@ public class GravaFuncionariosActivity extends Activity {
         AlertDialog.Builder dialogo = new AlertDialog.Builder(GravaFuncionariosActivity.this);
         dialogo.setTitle("Aviso");
         dialogo.setMessage(srt);
-        dialogo.setNeutralButton("OK", null);
+        dialogo.setNeutralButton("OK", (dialogInterface, i) -> {
+            finish();
+        });
         dialogo.show();
     }
 }

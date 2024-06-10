@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +15,7 @@
 
         android:layout_height="wrap_content"
 
-        android:background="#3ba0e2" >
+        android:background="@color/azul_escuro">
 
 
         <ImageView
@@ -50,9 +51,9 @@
 
             android:layout_height="match_parent"
 
-            android:background="#54B2D8"
+            android:background="@color/azul_escuro"
 
-            android:gravity="center" >
+            android:gravity="center">
 
             <TextView
 
@@ -66,7 +67,7 @@
 
                 android:textAppearance="?android:attr/textAppearanceLarge"
 
-                android:textColor="#000000" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -235,7 +236,7 @@
 
         android:gravity="center"
 
-        android:paddingTop="0dp" >
+        android:paddingTop="0dp">
 
 
         <ImageView
@@ -252,7 +253,6 @@
 
             android:src="@drawable/botao_alt_primeiro"
             tools:ignore="ImageContrastCheck" />
-
 
         <ImageView
 
@@ -304,68 +304,67 @@
     </LinearLayout>
 
     <LinearLayout
-
         android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-
+        android:layout_height="50dp"
         android:gravity="center"
-
-        android:paddingTop="0dp" >
-
+        android:paddingTop="0dp">
 
         <TextView
-
             android:id="@+id/txtstatus_funcionario"
-
-            android:layout_width="77dp"
-
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:contentDescription="@string/status"
-
+            android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             tools:ignore="TextSizeCheck"
             tools:text="@string/status" />
-
     </LinearLayout>
 
-    <LinearLayout
-
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-
-        android:gravity="center" >
+        android:layout_height="match_parent">
 
         <Button
-
             android:id="@+id/btalterarfuncionario"
-
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
-
+            android:backgroundTint="@color/azul"
             android:text="@string/alterar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.434"
+            app:layout_constraintStart_toEndOf="@+id/btexcluirfuncionario"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <Button
-
             android:id="@+id/btexcluirfuncionario"
-
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
-
+            android:backgroundTint="@color/vermelho"
             android:text="@string/excluir"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <Button
             android:id="@+id/btvoltar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/voltar" />
-
-    </LinearLayout>
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="#CCCCCC"
+            android:textColor="@android:color/black"
+            android:text="@string/voltar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btexcluirfuncionario"
+            app:layout_constraintHorizontal_bias="0.725"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
