@@ -36,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
         btGerarAtendimentos = findViewById(R.id.btGerarAtendimento);
         btatendimentos = findViewById(R.id.btAtendimentos);
 
-        if (!isUserLoggedIn()) {
+        /*if (!isUserLoggedIn()) {
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(loginIntent);
             finish();
             return;
-        }
+        }*/
 
         btCadastrarFuncionario.setOnClickListener(v -> {
             Intent gravaFuncionariosActivity = new Intent(MainActivity.this,

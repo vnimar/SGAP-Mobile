@@ -36,9 +36,9 @@ public class LoginActivity extends AppCompatActivity {
 
         try {
             bd = openOrCreateDatabase("bd_sgap", Context.MODE_PRIVATE, null);
-            bd.execSQL("CREATE TABLE IF NOT EXISTS usuarios(id INTEGER PRIMARY KEY AUTOINCREMENT, usuario TEXT NOT NULL, senha TEXT NOT NULL)");
+            bd.execSQL("create table if not exists usuarios(id integer primary key autoincrement, usuario text not null, senha text not null)");
 
-            Cursor cursor = bd.rawQuery("SELECT COUNT(*) FROM usuarios", null);
+            Cursor cursor = bd.rawQuery("SELECT * FROM usuarios", null);
             cursor.moveToFirst();
             int count = cursor.getInt(0);
             if (count == 0) {
@@ -57,8 +57,10 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = etUsername.getText().toString();
-                String password = etPassword.getText().toString();
+                String username = etUsername.getText().toString().trim();
+                String password = etPassword.getText().toString().trim();
+
+                Log.d("LoginActivity", "Attempting login with Username: " + username + " Password: " + password);
 
                 if (authenticate(username, password)) {
                     SharedPreferences.Editor editor = getSharedPreferences("sgap", MODE_PRIVATE).edit();
@@ -68,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
+
                 } else {
                     AlertDialog.Builder dialogo = new AlertDialog.Builder(LoginActivity.this);
                     dialogo.setTitle("Erro")
@@ -82,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
     private boolean authenticate(String username, String password) {
         Cursor cursor = null;
         try {
+            Log.d("LoginActivity", "Username: " + username + " Password: " + password);  // Adicione esta linha
             cursor = bd.rawQuery("SELECT id FROM usuarios WHERE usuario = ? AND senha = ?", new String[]{username, password});
             boolean authenticated = cursor.getCount() > 0;
             return authenticated;
